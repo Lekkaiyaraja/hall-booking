@@ -10,6 +10,11 @@ let bookings = [];
 // Utility function to generate unique IDs
 const generateId = () => '_' + Math.random().toString(36).substr(2, 9);
 
+// Root route to display a message in the browser
+app.get('/', (req, res) => {
+    res.send('<h1>Welcome to the Hall Booking API</h1><p>Use the API endpoints to create rooms, book rooms, and view bookings.</p>');
+});
+
 // 1. Create a Room
 app.post('/rooms', (req, res) => {
     const { numberOfSeats, amenities, pricePerHour } = req.body;
